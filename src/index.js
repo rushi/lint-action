@@ -42,7 +42,7 @@ async function runAction() {
 		// Set Git committer username and password
 		git.setUserInfo(gitName, gitEmail);
 	}
-	if (context.eventName === "pull_request") {
+	if (context.eventName === "pull_request" || context.eventName === "pull_request_target") {
 		// Fetch and check out PR branch:
 		// - "push" event: Already on correct branch
 		// - "pull_request" event on origin, for code on origin: The Checkout Action
