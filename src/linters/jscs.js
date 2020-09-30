@@ -59,6 +59,8 @@ class JSCS {
 		const lintResult = initLintResult();
 		lintResult.isSuccess = output.status === 0;
 
+		console.log("raw output is", output);
+
 		let outputJson;
 		try {
 			outputJson = JSON.parse(output.stdout);
@@ -68,6 +70,7 @@ class JSCS {
 			);
 		}
 
+		console.log("For debugging outputJson is", typeof outputJson, outputJson);
 		outputJson.forEach((jsCSoutput) => {
 			Object.keys(jsCSoutput).forEach((file) => {
 				const errors = jsCSoutput[file];
