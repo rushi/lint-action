@@ -120,6 +120,10 @@ inputs:
   jscs_dir:
     description: Directory where JSCS should be run
     required: false
+  jscs_extensions:
+    description: Extensions of files to check with JSCS
+    required: false
+    default: "js"
 
   prettier:
     description: Enable or disable Prettier checks
