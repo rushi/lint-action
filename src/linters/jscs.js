@@ -70,7 +70,6 @@ class JSCS {
 
 		// tests return output as an array, but when running Github actions its only an object
 		const filesList = Array.isArray(outputJson) ? outputJson[0] : outputJson;
-		console.log("Files list is", filesList);
 		Object.keys(filesList).forEach((file) => {
 			const errors = filesList[file];
 			if (errors.length > 0) {
