@@ -59,34 +59,31 @@ class JSCS {
 		const lintResult = initLintResult();
 		lintResult.isSuccess = output.status === 0;
 
-		console.log("raw output is", output);
-
 		let outputJson;
 		try {
 			outputJson = JSON.parse(output.stdout);
-			console.log("For debugging outputJson is", outputJson);
 		} catch (err) {
-			console.log('Exception caught', err);
 			throw Error(
 				`Error parsing ${this.name} JSON output: ${err.message}. Output: "${output.stdout}"`,
 			);
 		}
 
-		outputJson.forEach && outputJson.forEach((jsCSoutput) => {
-			Object.keys(jsCSoutput).forEach((file) => {
-				const errors = jsCSoutput[file];
-				if (errors.length > 0) {
-					errors.forEach((error) => {
-						lintResult.error.push({
-							path: file,
-							firstLine: error.line,
-							lastLine: error.line,
-							message: error.message,
-						});
+		// tests return output as an array, but when running Github actions its only an object
+		const filesList = Array.isArray(outputJson) ? outputJson[0] : outputJson;
+		console.log("Files list is", filesList);
+		Object.keys(filesList).forEach((file) => {
+			const errors = filesList[file];
+			if (errors.length > 0) {
+				errors.forEach((error) => {
+					lintResult.error.push({
+						path: file,
+						firstLine: error.line,
+						lastLine: error.line,
+						message: error.message,
 					});
-				}
-			});
-		});;
+				});
+			}
+		});
 
 		return lintResult;
 	}

@@ -51,8 +51,8 @@ function getLintParams(dir) {
 					message: "If statement without curly braces",
 					path: "./file2.js",
 				},
-            ],
-            warning:[]
+			],
+			warning: [],
 		},
 	};
 }
@@ -81,8 +81,8 @@ function getAutoFixParams(dir) {
 					lastLine: 3,
 					message: "If statement without curly braces",
 				},
-            ],
-            warning: []
+			],
+			warning: [],
 		},
 	};
 }
