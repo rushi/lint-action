@@ -64,14 +64,15 @@ class JSCS {
 		let outputJson;
 		try {
 			outputJson = JSON.parse(output.stdout);
+			console.log("For debugging outputJson is", outputJson);
 		} catch (err) {
+			console.log('Exception caught', err);
 			throw Error(
 				`Error parsing ${this.name} JSON output: ${err.message}. Output: "${output.stdout}"`,
 			);
 		}
 
-		console.log("For debugging outputJson is", typeof outputJson, outputJson);
-		outputJson.forEach((jsCSoutput) => {
+		outputJson.forEach && outputJson.forEach((jsCSoutput) => {
 			Object.keys(jsCSoutput).forEach((file) => {
 				const errors = jsCSoutput[file];
 				if (errors.length > 0) {
