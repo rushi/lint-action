@@ -1,5 +1,5 @@
-name: Lint Action
-author: Samuel Meuli
+name: Lint Action with JSCS & JSHint
+author: Rushi Vishavadia based on work by Samuel Meuli
 description: GitHub Action for detecting and fixing linting errors
 
 inputs:
@@ -112,6 +112,14 @@ inputs:
     description: Shell command to prepend to the linter command. Will default to `npx --no-install` for NPM and `yarn run --silent` for Yarn.
     required: false
     default: ""
+
+  jscs:
+    description: Enable or disable JSCS checks
+    required: false
+    default: false
+  jscs_dir:
+    description: Directory where JSCS should be run
+    required: false
 
   prettier:
     description: Enable or disable Prettier checks

@@ -3,6 +3,7 @@ const ESLint = require("./eslint");
 const Flake8 = require("./flake8");
 const Gofmt = require("./gofmt");
 const Golint = require("./golint");
+const JSCS = require("./jscs");
 const Mypy = require("./mypy");
 const PHPCodeSniffer = require("./php-codesniffer");
 const Prettier = require("./prettier");
@@ -16,6 +17,7 @@ const XO = require("./xo");
 const linters = {
 	// Linters
 	eslint: ESLint,
+	jscs: JSCS,
 	flake8: Flake8,
 	golint: Golint,
 	mypy: Mypy,

@@ -1,0 +1,37 @@
+{
+  "preset": "google",
+  "validateIndentation": 4,
+  "validateQuoteMarks": null,
+  "disallowMultipleVarDecl": null,
+  "disallowOperatorBeforeLineBreak": [
+    "+",
+    ".",
+    "||"
+  ],
+  "requireOperatorBeforeLineBreak": null,
+  "maximumLineLength": {
+    "value": 120,
+    "allExcept": [
+      "comments"
+    ]
+  },
+  "disallowTrailingWhitespace": "ignoreEmptyLines",
+  "requireCurlyBraces": {
+    "keywords": [
+      "if",
+      "else",
+      "for",
+      "while",
+      "do",
+      "try",
+      "catch"
+    ],
+    "allExcept": [
+      "return",
+      "continue",
+      "break"
+    ]
+  },
+  "excludeFiles": [],
+  "maxErrors": 100
+}

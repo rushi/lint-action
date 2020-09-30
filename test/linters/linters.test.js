@@ -9,6 +9,7 @@ const eslintTypescriptParams = require("./params/eslint-typescript");
 const flake8Params = require("./params/flake8");
 const gofmtParams = require("./params/gofmt");
 const golintParams = require("./params/golint");
+const jscsParams = require("./params/jscs");
 const mypyParams = require("./params/mypy");
 const phpCodeSnifferParams = require("./params/php-codesniffer");
 const prettierParams = require("./params/prettier");
