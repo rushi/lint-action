@@ -47,6 +47,8 @@ async function createCheck(linterName, sha, context, lintResult, summary) {
 	};
 	try {
 		log(`Creating GitHub check with ${annotations.length} annotations for ${linterName}…`);
+		console.log('Debug data', body)
+		console.log('Debug data 2', context.token);
 		await request(`https://api.github.com/repos/${context.repository.repoName}/check-runs`, {
 			method: "POST",
 			headers: {
